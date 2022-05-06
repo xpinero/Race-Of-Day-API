@@ -1,7 +1,6 @@
 {
   "name": "two-wheels-rod-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
@@ -14,5 +13,14 @@
   },
   "dependencies": {
     "express": "^4.18.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpinero/Race-Of-Day-API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xpinero/Race-Of-Day-API/issues"
+  },
+  "homepage": "https://github.com/xpinero/Race-Of-Day-API#readme",
+  "description": ""
 }
