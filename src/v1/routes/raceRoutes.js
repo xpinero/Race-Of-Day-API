@@ -2,6 +2,17 @@ const express = require("express");
 const raceController = require("../../controllers/raceController");
 const router = express.Router();
 
+router.get("/", raceController.getAllRaces);
+
+router.get("/:raceId", raceController.getOneRace);
+
+router.post("/", raceController.createNewRace);
+
+router.patch("/:raceId", raceController.updateOneRace);
+
+router.delete("/:workoutId", raceController.deleteOneRace);
+
+module.exports = router;
 // router.get("/", (req, res) => {
 //   res.send("Get all races");
 // });
@@ -22,4 +33,3 @@ const router = express.Router();
 //   res.send("Delete an existing race");
 // });
 
-module.exports = router;
