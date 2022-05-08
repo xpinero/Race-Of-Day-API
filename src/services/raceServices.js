@@ -1,12 +1,15 @@
+const Race = require("../database/Race");
+
 const getAllRaces = () => {
-  return;
+  const allRaces = Race.getAllRaces();
+  return allRaces;
 };
 
 const getOneRace = () => {
   return;
 };
 
-const createNewRace = () => {
+const createNewRace = () => { 
   return;
 };
 

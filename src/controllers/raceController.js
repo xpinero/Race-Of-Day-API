@@ -2,7 +2,7 @@ const raceService = require("../services/raceServices");
 
 const getAllRaces = (req, res) => {
   const allRaces = raceService.getAllRaces();
-  res.send("Get all races");
+  res.send({status: "OK", data: allRaces});
 };
 
 const getOneRace = (req, res) => {
