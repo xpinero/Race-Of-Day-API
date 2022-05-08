@@ -11,8 +11,25 @@ const getOneRace = (req, res) => {
 };
 
 const createNewRace = (req, res) => {
-  const createdRace = raceService.createNewRace();
-  res.send("Create a new race");
+  const { body } = req;
+  if(
+    !body.name ||
+    !body.mode ||
+    !body.equipment ||
+    !body. exercises ||
+    !body.trainerTips
+  ) {
+    return;
+  }
+  const newRace = {
+    name: body.name,
+    mode: body.mode,
+    equipment: body.equipment,
+    exercises: body.exercises,
+    trainerTips: body.trainerTips,
+  }
+  const createdRace = raceService.createNewRace(newRace);
+  res.status(201).send({status: "OK", data: createdRace});
 };
 
 const updateOneRace = (req, res) => {
