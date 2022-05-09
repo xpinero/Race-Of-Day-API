@@ -18,13 +18,20 @@ const createNewRace = (newRace) => {
   const isAlreadyAdded =
     DB.races.findIndex((race) => race.name === newRace.name) > -1;
   if (isAlreadyAdded) {
-    return;
+    throw {
+      status: 400,
+      message: `Race with the name '${newRace.name}' already exists`,
+    };
   }
-  DB.races.push(newRace);
-  saveToDatabase(DB);
-  return newRace;
+  try {
+    DB.races.push(newRace);
+    saveToDatabase(DB);
+    return newRace;
+  } catch (error) {
+    throw { status: 500, message: error?.message || error };
+  }
 };
-
+  
 const updateOneRace = (raceId, changes) => {
   const indexForUpdate = DB.races.findIndex(
     (race) => race.id === raceId

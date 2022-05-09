@@ -1,8 +1,14 @@
 const raceService = require("../services/raceServices");
 
 const getAllRaces = (req, res) => {
-  const allRaces = raceService.getAllRaces();
-  res.send({status: "OK", data: allRaces});
+  try {
+    const allRaces = raceService.getAllRaces();
+    res.send({status: "OK", data: allRaces});
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
+  }
 };
 
 const getOneRace = (req, res) => {
@@ -10,10 +16,21 @@ const getOneRace = (req, res) => {
     params: { raceId },
   } = req;
   if (!raceId) {
-    return;
+    res
+      .status(400)
+      .send({
+        status: "FAILED",
+        data: { error: "Parameter ':raceId' can not be empty" },
+      });
   }
-  const race = raceService.getOneRace(raceId);
-  res.send({ status: "OK", data: race });
+  try {
+    const race = raceService.getOneRace(raceId);
+    res.send({ status: "OK", data: race });
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
+  }
 };
 
 const createNewRace = (req, res) => {
@@ -42,9 +59,15 @@ const createNewRace = (req, res) => {
     equipment: body.equipment,
     exercises: body.exercises,
     trainerTips: body.trainerTips,
+  };
+  try {
+    const createdRace = raceService.createNewRace(newRace);
+    res.status(201).send({ status: "OK", data: createdRace });
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
   }
-  const createdRace = raceService.createNewRace(newRace);
-  res.status(201).send({ status: "OK", data: createdRace });
 };
 
 const updateOneRace = (req, res) => {
@@ -53,10 +76,21 @@ const updateOneRace = (req, res) => {
     params: { raceId },
   } = req;
   if (!raceId) {
-    return;
+    res
+      .status(400)
+      .send({
+        status: "FAILED",
+        data: { error: "Parameter ':raceId' can not be empty" },
+      });
   }
-  const updatedRace = raceService.updateOneRace(raceId, body);
-  res.send({ status: "OK", data: updatedRace });
+  try {
+    const updatedRace = raceService.updateOneRace(raceId, body);
+    res.send({ status: "OK", data: updatedRace });
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
+  }
 };
 
 const deleteOneRace = (req, res) => {
@@ -64,10 +98,21 @@ const deleteOneRace = (req, res) => {
     params: { raceId },
   } = req;
   if (!raceId) {
-    return;
+    res
+      .status(400)
+      .send({
+        status: "FAILED",
+        data: { error: "Parameter ':raceId' can not be empty" },
+      });
   }
-  raceService.deleteOneRace(raceId);
-  res.status(204).send({ status: "OK" });
+  try {
+    raceService.deleteOneRace(raceId);
+     res.status(204).send({ status: "OK" });
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
+  }
 };
 
 module.exports = {

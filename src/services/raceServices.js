@@ -19,6 +19,12 @@ const createNewRace = (newRace) => {
     createdAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
     updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
   };
+  try {
+    const createdRace = Race.createNewRace(raceToInsert);
+    return createdRace;
+  } catch (error) {
+    throw error;
+  }
   const createdRace = Race.createNewRace(raceToInsert); 
   return createdRace;
 };
