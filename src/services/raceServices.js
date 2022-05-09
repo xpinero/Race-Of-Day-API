@@ -4,12 +4,12 @@ const Race = require("../database/Race");
 
 const getAllRaces = () => {
   const allRaces = Race.getAllRaces();
-  return allRaces
-  //return DB.races;
+  return allRaces;
 };
 
-const getOneRace = () => {
-  return;
+const getOneRace = (raceId) => {
+  const race = Race.getOneRace(raceId)
+  return race;
 };
 
 const createNewRace = (newRace) => {
@@ -23,12 +23,13 @@ const createNewRace = (newRace) => {
   return createdRace;
 };
 
-const updateOneRace = () => {
-  return;
+const updateOneRace = (raceId, changes) => {
+  const updatedRace = Race.updateOneRace(raceId, changes);
+  return updatedRace;
 };
 
-const deleteOneRace = () => {
-  return;
+const deleteOneRace = (raceId) => {
+  Race.deleteOneRace(raceId);
 };
 
 module.exports = {
