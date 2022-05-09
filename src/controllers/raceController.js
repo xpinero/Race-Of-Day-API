@@ -29,11 +29,11 @@ const createNewRace = (req, res) => {
     trainerTips: body.trainerTips,
   }
   const createdRace = raceService.createNewRace(newRace);
-  res.status(201).send({ status: "not -OK", data: createdRace });
+  res.status(201).send({ status: "A-OK", data: createdRace });
 };
 
 const updateOneRace = (req, res) => {
-  const updateRace = raceService.updateOneRace();
+  const updatedRace = raceService.updateOneRace();
   res.send("Update an existing race");
 };
 

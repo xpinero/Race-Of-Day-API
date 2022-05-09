@@ -8,7 +8,7 @@ const getAllRaces = () => {
 
 const createNewRace = (newRace) => {
   const isAlreadyAdded =
-    DB.races.findIndex((race) => race.name === newRace.name)
+    DB.races.findIndex((race) => race.name === newRace.name) > -1;
   if (isAlreadyAdded) {
     return;
   }
