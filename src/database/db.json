@@ -97,6 +97,27 @@
       "id": "19e73344-0689-470b-afe6-0090fa83a74d",
       "createdAt": "5/9/2022, 2:30:30 PM",
       "updatedAt": "5/9/2022, 2:30:31 PM"
+    },
+    {
+      "name": "Great Adventure",
+      "mode": "Cross country",
+      "equipment": [
+        "Honda Africa",
+        "Yamaha Adventure Touring"
+      ],
+      "exercises": [
+        "Endurance",
+        "un-known terrain",
+        "inclimate weather"
+      ],
+      "trainerTips": [
+        "Bring plenty of spare parts",
+        "Never be afraid to go off the path",
+        "Always tell someone where you are going"
+      ],
+      "id": "2de4723b-d7bf-4483-875d-bb8bb6d26c0c",
+      "createdAt": "5/9/2022, 7:52:45 PM",
+      "updatedAt": "5/9/2022, 7:52:45 PM"
     }
   ]
 }
