@@ -1,0 +1,102 @@
+{
+  "races": [
+    {
+      "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
+      "name": "V for Victory",
+      "mode": "Time attack/asphalt",
+      "equipment": [
+        "Honda RC213V",
+        "Yamaha YZR-M1"
+      ],
+      "exercises": [
+        "Long corners",
+        "S-corner, down",
+        "S-corner, up",
+        "90 degree corner, x2",
+        "blind uphill climb",
+        "slick corner on turn 23, 50 ft"
+      ],
+      "createdAt": "4/20/2022, 2:21:56 PM",
+      "updatedAt": "4/20/2022, 2:21:56 PM",
+      "trainerTips": [
+        "3 laps to warm tires",
+        "you can max out on the long swoop for time cuts",
+        "s-turn on 12 can give you a hole shot on the inside"
+      ]
+    },
+    {
+      "id": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
+      "name": "Dead mans race",
+      "mode": "Hare scramble",
+      "equipment": [
+        "Honda CRF250r",
+        "Yamaha YZ250f"
+      ],
+      "exercises": [
+        "Tree avoidance",
+        "Tree leaning and wrapping",
+        "Loose gravel and large rocks",
+        "Bluff face with narrow path",
+        "Clutch control",
+        "Rear brake sliding"
+      ],
+      "createdAt": "1/25/2022, 1:15:44 PM",
+      "updatedAt": "3/10/2022, 8:21:56 AM",
+      "trainerTips": [
+        "Build core, arm and leg strength",
+        "Stretch before and after",
+        "Get used to being wet",
+        "Practice clutch control for tight spaces",
+        "Stay in lower gear for back to back obstacle",
+        "Never tailgate"
+      ]
+    },
+    {
+      "id": "d8be2362-7b68-4ea4-a1f6-03f8bc4eede7",
+      "name": "Honda Haven",
+      "mode": "Circuit street/asphalt",
+      "equipment": [
+        "Honda CBR600RR",
+        "Honda CBR1000RR",
+        "Honda CB650R"
+      ],
+      "exercises": [
+        "TIght corners",
+        "Blind corners",
+        "Passing opportunities",
+        "Knee capping",
+        "Increasing radius"
+      ],
+      "createdAt": "11/20/2021, 5:39:07 PM",
+      "updatedAt": "11/20/2021, 5:39:07 PM",
+      "trainerTips": [
+        "Sticky tires",
+        "Trail braking",
+        "ATGATT"
+      ]
+    },
+    {
+      "name": "King of the road",
+      "mode": "Cruiser drag race",
+      "equipment": [
+        "Indian Chief Dark Horse",
+        "Harley Davidson V-Rod",
+        "Arch KRGT1"
+      ],
+      "exercises": [
+        "weight offset",
+        "Counter balance",
+        "increasing radius",
+        "weight transfer"
+      ],
+      "trainerTips": [
+        "Back will lose traction fast with weight transfer",
+        "Shift often",
+        "Counter steer to save pegs"
+      ],
+      "id": "19e73344-0689-470b-afe6-0090fa83a74d",
+      "createdAt": "5/9/2022, 2:30:30 PM",
+      "updatedAt": "5/9/2022, 2:30:31 PM"
+    }
+  ]
+}

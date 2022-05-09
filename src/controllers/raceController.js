@@ -1,21 +1,64 @@
+const raceService = require("../services/raceServices");
+
 const getAllRaces = (req, res) => {
-  res.send("Get all workouts");
+  const allRaces = raceService.getAllRaces();
+  res.send({status: "OK", data: allRaces});
 };
 
 const getOneRace = (req, res) => {
-  res.send("Get an existing race");
+  const {
+    params: { raceId },
+  } = req;
+  if (!raceId) {
+    return;
+  }
+  const race = raceService.getOneRace(raceId);
+  res.send({ status: "OK", data: race });
 };
 
 const createNewRace = (req, res) => {
-  res.send("Create a new race");
+  const { body } = req;
+  if(
+    !body.name ||
+    !body.mode ||
+    !body.equipment ||
+    !body. exercises ||
+    !body.trainerTips
+  ) {
+    return;
+  }
+  const newRace = {
+    name: body.name,
+    mode: body.mode,
+    equipment: body.equipment,
+    exercises: body.exercises,
+    trainerTips: body.trainerTips,
+  }
+  const createdRace = raceService.createNewRace(newRace);
+  res.status(201).send({ status: "OK", data: createdRace });
 };
 
 const updateOneRace = (req, res) => {
-  res.send("Update an existing workout");
+  const {
+    body,
+    params: { raceId },
+  } = req;
+  if (!raceId) {
+    return;
+  }
+  const updatedRace = raceService.updateOneRace(raceId, body);
+  res.send({ status: "OK", data: updatedRace });
 };
 
 const deleteOneRace = (req, res) => {
-  res.send("Delete an existing workout");
+  const {
+    params: { raceId },
+  } = req;
+  if (!raceId) {
+    return;
+  }
+  raceService.deleteOneRace(raceId);
+  res.status(204).send({ status: "OK" });
 };
 
 module.exports = {
