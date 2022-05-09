@@ -10,7 +10,7 @@ router.post("/", raceController.createNewRace);
 
 router.patch("/:raceId", raceController.updateOneRace);
 
-router.delete("/:workoutId", raceController.deleteOneRace);
+router.delete("/:raceId", raceController.deleteOneRace);
 
 module.exports = router;
 // router.get("/", (req, res) => {
@@ -29,7 +29,7 @@ module.exports = router;
 //   res.send("Update an existing race");
 // });
 
-// router.delete("/:workoutId", (req, res) => {
+// router.delete("/:raceId", (req, res) => {
 //   res.send("Delete an existing race");
 // });
 

@@ -1,6 +1,6 @@
 const express = require("express");
 //const v1Router = require("./v1/routes/");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const v1RaceRouter = require("./v1/routes/raceRoutes");
 const app = express();
 const PORT = process.env.PORT || 3000;

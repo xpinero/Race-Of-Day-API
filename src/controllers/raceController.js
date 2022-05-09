@@ -2,7 +2,7 @@ const raceService = require("../services/raceServices");
 
 const getAllRaces = (req, res) => {
   const allRaces = raceService.getAllRaces();
-  res.send({status: "OK", data: allRaces});
+  res.send({status: "A-OK", data: allRaces});
 };
 
 const getOneRace = (req, res) => {
@@ -29,17 +29,17 @@ const createNewRace = (req, res) => {
     trainerTips: body.trainerTips,
   }
   const createdRace = raceService.createNewRace(newRace);
-  res.status(201).send({status: "OK", data: createdRace});
+  res.status(201).send({ status: "not -OK", data: createdRace });
 };
 
 const updateOneRace = (req, res) => {
   const updateRace = raceService.updateOneRace();
-  res.send("Update an existing workout");
+  res.send("Update an existing race");
 };
 
 const deleteOneRace = (req, res) => {
   raceService.deleteOneRace();
-  res.send("Delete an existing workout");
+  res.send("Delete an existing race");
 };
 
 module.exports = {
