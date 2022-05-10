@@ -1,15 +1,22 @@
 const { v4: uuid } = require("uuid");
-
 const Race = require("../database/Race");
 
 const getAllRaces = () => {
-  const allRaces = Race.getAllRaces();
-  return allRaces;
+  try {
+    const allRaces = Race.getAllRaces();
+    return allRaces;
+  } catch (error) {
+    throw error;
+  }
 };
 
 const getOneRace = (raceId) => {
-  const race = Race.getOneRace(raceId)
-  return race;
+  try {
+    const race = Race.getOneRace(raceId)
+    return race;
+  } catch (error) {
+    throw error;
+  }
 };
 
 const createNewRace = (newRace) => {
@@ -25,17 +32,23 @@ const createNewRace = (newRace) => {
   } catch (error) {
     throw error;
   }
-  const createdRace = Race.createNewRace(raceToInsert); 
-  return createdRace;
 };
 
 const updateOneRace = (raceId, changes) => {
-  const updatedRace = Race.updateOneRace(raceId, changes);
-  return updatedRace;
+  try {
+    const updatedRace = Race.updateOneRace(raceId, changes);
+    return updatedRace;
+  } catch (error) {
+    throw error;
+  }
 };
 
 const deleteOneRace = (raceId) => {
-  Race.deleteOneRace(raceId);
+  try {
+    Race.deleteOneRace(raceId);
+  } catch (error) {
+    throw error;
+  }
 };
 
 module.exports = {
