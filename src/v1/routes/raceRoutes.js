@@ -1,10 +1,13 @@
 const express = require("express");
 const raceController = require("../../controllers/raceController");
+const recordController = require("../../controllers/recordController");
 const router = express.Router();
 
 router.get("/", raceController.getAllRaces);
 
 router.get("/:raceId", raceController.getOneRace);
+
+router.get("/:raceId/records", recordController.getRecordForRace)
 
 router.post("/", raceController.createNewRace);
 
