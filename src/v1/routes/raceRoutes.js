@@ -7,7 +7,7 @@ router.get("/", raceController.getAllRaces);
 
 router.get("/:raceId", raceController.getOneRace);
 
-router.get("/raceId/records", recordController.getRecordForRace)
+router.get("/:raceId/records", recordController.getRecordForRace)
 
 router.post("/", raceController.createNewRace);
 
