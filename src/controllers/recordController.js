@@ -1,9 +1,20 @@
 const recordService = require("../services/recordService");
 
 const getRecordForRace = (req, res) => {
-  try{
-    const allRecords = recordService.getRecordForRace();
-    res.send({status: "OK", data: allRecords});
+  const {
+    params: { raceId },
+  } = req;
+  if (!raceId) {
+    res
+      .status(400)
+      .send({
+        status: "FAILED",
+        data: { error: "Parameter ':raceId' can not be empty" },
+      });
+  }
+  try {
+    const race = recordService.getRecordForRace(raceId);
+    res.send({ status: "OK", data: race });
   } catch (error) {
     res
       .status(error?.status || 500)
